@@ -1,0 +1,28 @@
+@import '../../assets/css/_base.scss';
+@media (min-width: 1080px) {
+	.float_btn {
+		display: none;
+	}
+}
+@media (max-width: 1080px) {
+	.float_btn {
+		border-radius: pr(54);
+		background: #ff3144;
+		margin: 0 auto;
+		text-align: center;
+		padding: pr(30) 0 pr(30) 0;
+		width: pr(726);
+		color: #fff;
+		font-size: pr(42);
+		font-weight: bold;
+		position: fixed;
+		z-index: 300;
+		left: 50%;
+		bottom: 0;
+		transform: translate(-50%, 100%);
+	}
+	.is-shown {
+		transform: translate(-50%, -2.43rem);
+		transition: transform .6s 1s;
+	}
+}

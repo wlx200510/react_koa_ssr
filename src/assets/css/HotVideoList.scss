@@ -1,0 +1,146 @@
+@import './swiper.css';
+@import './_base.scss';
+
+.hotVideoListBox {
+    max-width: 980px;
+    margin: 0 auto;
+}
+.hotVideoListTitle {
+    height: pr(136);
+    background: #f7f7f7;
+    position: relative;
+    img {
+        position: absolute;
+        width: pr(231);
+        height: pr(62);
+        left: 50%;
+        top: 50%;
+        margin-left: pr(-115);
+        margin-top: pr(-31);
+    }
+}
+.videoList {
+    padding-bottom: pr(300);
+    background: #fff;
+}
+.hotVideoListItem {
+    padding: pr(20) pr(20) pr(28);
+    .poster-box {
+        color: #fff; 
+        position: relative;
+        width: 100%;
+        height: pr(585);
+        top:0;
+        left: 0;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: pr(20);
+        .icon {
+            position: absolute;
+            width: pr(162);
+            height: pr(162);
+            top:50%;
+            left: 50%;
+            margin-top: pr(-81);
+            margin-left: pr(-81);
+            background: rgba(0, 0, 0, 0.4) url('../img/hotListPlayIcon.png') 56% center no-repeat;
+            background-size: pr(57) pr(64);
+            z-index: 10;
+            border-radius: 50%;
+            border: 1px solid #fff;
+        }
+        .desc {
+            padding: 0 pr(30);
+            line-height: pr(58);
+            height: pr(180);
+            font-size: pr(46);
+            padding-top: pr(29);
+            margin-bottom: pr(10);
+            border-radius: pr(20) pr(20) 0 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, .6), rgba(0, 0, 0, 0));
+        }
+        .playCount {
+            margin-top: pr(10);
+            font-size: pr(30);
+            line-height: pr(41);
+        }
+        .duration {
+            width: pr(112);
+            height: pr(48);
+            position: absolute;
+            bottom: pr(28);
+            right: pr(30);
+            background: rgba(0, 0, 0, .6);
+            border-radius: pr(24);
+            font-size: pr(24);
+            line-height: pr(48);
+            text-align: center;
+        }
+    }
+    .condition {
+        color: #797979;
+        margin-top: pr(33);
+        .author-img {
+            float: left;
+            width: pr(81);
+            height: pr(81);
+            border-radius: 50%;
+            margin-left: pr(30);
+            margin-right: pr(28);
+            img {
+                width: pr(81);
+                height: pr(81); 
+                border-radius: 50%;
+            }
+        }
+        .author-name {
+            float: left;
+            font-size: pr(38);
+            height: pr(81);
+            line-height: pr(81);
+        }
+        .right-btn {
+            float: right;
+        }
+        .btn {
+            float: right;
+            margin: 0 pr(20);
+        }
+        .share-icon {
+            width: pr(44);
+            height: pr(44);
+            background: url('../img/shareIcon.jpg') center no-repeat;
+            background-size: 100%;
+            margin-top: pr(15);
+        }
+        .comment-icon {
+            float: left;
+            width: pr(47);
+            height: pr(45);
+            background: url('../img/commentIcon.jpg') center no-repeat;
+            background-size: 100%;
+            margin-top: pr(15);
+        }
+        .like-icon {
+            float: left;
+            width: pr(48);
+            height: pr(43);
+            background: url('../img/likeIcon.jpg') center no-repeat;
+            background-size: 100%;
+            margin-top: pr(15);
+        }
+        .num {
+            float: left;
+            font-size: pr(30);
+            line-height: pr(81);
+            margin-left: pr(22);
+        }
+    }
+}
+.hotListFooter {
+    text-align: center;
+    padding: pr(50) 0;
+    color: #ff3144;
+    margin-bottom: 4rem;
+}
