@@ -93,6 +93,7 @@ const devConfig={
     }),
     new HtmlWebpackPlugin({
       title:'test1',
+      publicUrl: './',
       filename:'index.html',
       template:'./index.ejs',
     }),

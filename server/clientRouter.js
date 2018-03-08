@@ -70,14 +70,21 @@ const makeup=(ctx,store,createApp,html)=>{
 const clientRouter=async(ctx,next)=>{
   let html=fs.readFileSync(path.join(path.resolve(__dirname,'../dist'),'index.html'),'utf-8');
   let store=createStore(configureStore);
+  let pureRoutes='';
+  // 这段逻辑是用于修复路径上有问号和参数时的匹配bug
+  if (ctx.req.url.indexOf('?')>0) {
+    pureRoutes=ctx.req.url.split("?")[0]
+  } else {
+    pureRoutes=ctx.req.url
+  }
 
-  let branch=matchRoutes(routesConfig,ctx.req.url)
+  let branch=matchRoutes(routesConfig,pureRoutes)
   let promises = branch.map(({route,match})=>{
     return route.thunk?(route.thunk(store)):Promise.resolve(null)
   });
   await Promise.all(promises).catch(err=>console.log('err:---',err))
 
-  let isMatch=getMatch(routesConfig,ctx.req.url);
+  let isMatch=getMatch(routesConfig,pureRoutes);
   if(isMatch){
     let renderedHtml=await makeup(ctx,store,createApp,html);
     ctx.body=renderedHtml
