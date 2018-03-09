@@ -8,6 +8,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const isServer=process.env.BUILD_TYPE==='server';
 const rootPath=path.join(__dirname,'../');
+const UglifyJsPlugin=require('uglifyjs-webpack-plugin');
 
 const prodConfig={
   context: path.join(rootPath,'./src'),
@@ -103,6 +104,10 @@ const prodConfig={
     new ReactLoadablePlugin({
       filename: path.join(rootPath,'./dist/react-loadable.json'),
     }),
+    new UglifyJsPlugin({
+      parallel: true,
+      sourceMap: true
+    })
   ]
 }
 
