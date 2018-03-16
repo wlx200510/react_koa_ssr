@@ -8,7 +8,7 @@ class Home extends Component{
 
   componentDidMount(){
     console.log(this.props)
-    this.props.getHomeInfo()
+    this.props.getHomeInfo(1)
   }
 
   componentDidCatch(error, info) {
