@@ -1,8 +1,12 @@
-# React-universal-ssr
+# React-koa-ssr
+> 本脚手架适合已有的react单页面项目迁移到服务端渲染，又不想改动较大，不适合用NEXT框架重新写的项目.
+
 webpack+router4+按需加载+webpack-dev-server 实现react服务端渲染(koa)
 
+
 ## 目录介绍
-.
+
+```
 ├── assets
 │   └── index.css //放置一些全局的资源文件 可以是js 图片等
 ├── config
@@ -62,6 +66,7 @@ webpack+router4+按需加载+webpack-dev-server 实现react服务端渲染(koa)
         ├── constants.js       // 各action名称汇集处 防止重名
         └── reducers
             └── index.js       // 引用各页面的所有reducer 在此处统一combine处理
+```
 
 项目实践中发现，页面的reducer跟页面的数据需求和数据结构强相关，获取到新数据后的处理应由页面本身处理。
 action是请求数据的触发器，通过与具体页面解耦，从而使逻辑更清晰。
