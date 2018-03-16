@@ -7,7 +7,7 @@ const ACTION_HANDLERS = {
 
 const initialState = {
   count: 33,
-  homeInfo: {name: '', age: ''}
+  homeInfo: {name: '', age: '', id: ''}
 }
 
 export const HomeReducer = function(state = initialState, action) {
