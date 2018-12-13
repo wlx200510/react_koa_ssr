@@ -5,7 +5,8 @@ import {  routerReducer, routerMiddleware } from 'react-router-redux'
 import rootReducer from '../store/reducers/index.js';
 
 const routerReducers=routerMiddleware(createHistory());//路由
-const composeEnhancers = process.env.NODE_ENV=='development'?window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : compose;
+const devComposer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const composeEnhancers = process.env.NODE_ENV=='development' ? devComposer : compose
 
 const middleware=[thunkMiddleware,routerReducers];
 
